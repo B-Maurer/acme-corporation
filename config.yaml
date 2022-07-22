@@ -1,7 +1,8 @@
 baseURL: https://b-maurer.github.io/acme-corporation/
 languageCode: en-us
 title: Acme Corporation
-theme: Universal
+# theme: Universal
+theme: Eclectic
 author:
   facebook: "https://facebook.com/example"
   twitter: "https://twitter.com/example"

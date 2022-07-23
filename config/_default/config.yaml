@@ -1,15 +1,9 @@
 baseURL: https://b-maurer.github.io/acme-corporation/
 languageCode: en-us
 title: Acme Corporation
-# theme: Universal
 theme: Eclectic
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  highlight:
-    lineNos: true
 enableEmoji: true
+
 menu:
   main:
     - identifier: about

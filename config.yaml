@@ -3,14 +3,13 @@ languageCode: en-us
 title: Acme Corporation
 # theme: Universal
 theme: Eclectic
-
-enableEmoji: true
-
 markup:
   goldmark:
     renderer:
       unsafe: true
-
+  highlight:
+    lineNos: true
+enableEmoji: true
 author:
   facebook: "https://facebook.com/example"
   twitter: "https://twitter.com/example"
@@ -19,7 +18,6 @@ author:
   location: New York
   phone: (999) 999-9999
   hours: "**Mon-Fri:** 9:00AM - 6:00PM, ET"
-
 menu:
   main:
     - identifier: about
@@ -30,7 +28,6 @@ menu:
       name: Contact
       url: /contact
       weight: 200
-
 params:
   color: "#4f46e5"
   copyright: "Copyright &copy; 2022 Acme Corporation.
@@ -50,7 +47,6 @@ params:
       recentCount: 7
     - title: Contact Us
       contact: true
-
   style: blue
   logo: /image/logo.png
   logo_small: /image/logo.png

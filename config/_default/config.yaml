@@ -3,14 +3,3 @@ languageCode: en-us
 title: Acme Corporation
 theme: Eclectic
 enableEmoji: true
-
-menu:
-  main:
-    - identifier: about
-      name: About
-      url: /about
-      weight: 100
-    - identifier: contact
-      name: Contact
-      url: /contact
-      weight: 200

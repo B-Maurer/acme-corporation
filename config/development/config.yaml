@@ -1,4 +1,5 @@
 buildDrafts: true
+canonifyURLs: true
 minify: false
 params:
   DebugMenu: true

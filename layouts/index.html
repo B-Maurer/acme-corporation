@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./index.css">
   {{ if $.Title }}
   <title>{{$.Title}}</title>
+  {{ else if site.Title }}
+  <title>{{site.Title}}</title>
   {{ end }}
 </head>
 

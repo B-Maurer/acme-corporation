@@ -31,14 +31,37 @@
     </nav>
     {{ end }}
   </header>
+{{/*  Intro  */}}
   <section id="intro">
     {{ with $title }}<h1>{{ . }}</h1>{{ end }}
     {{ with .Param "subtitle" }}<h2>{{ . | humanize | markdownify }}</h2>{{ end }}
     <a href="{{ ref . (.Param "explore") }}">Explore</a>
   </section>
+{{/*  Products    */}}
+  {{ with .Resources.GetMatch "products.csv" }}
+  <section id="products">
+    <h1>Our Products</h1>
+    {{ with . | transform.Unmarshal (dict "delimiter" ",") }}
+    <table>
+      {{ range $i, $value := . }}
+      {{ if eq $i 0 }}<thead>{{ end }}
+        <tr>
+          {{ range $value }}
+          <td>{{ . }}</td>
+          {{ end }}
+        </tr>
+      {{ if eq $i 0 }}</thead>{{ end }}
+      {{ end }}
+    </table>  
+    {{ end }}
+    <a download href="{{ .Permalink }}">Download listing</a>
+  </section>
+  {{ end }}
+{{/*  Markdown content  */}}
   <section id="description">
     {{ .Content }}
   </section>
+{{/*  Section menu from frontmatter  */}}
   {{ with site.Menus.main }}
   <section id="menu">
     <h1>Website sections</h1>
@@ -59,6 +82,7 @@
     </ul>
   </section>
   {{ end }}
+{{/*  Latest Posts  */}}
   {{ with 
     (where site.RegularPages 
     ".Section" "in" site.Params.mainSections) 
@@ -80,6 +104,7 @@
   </ul>
   </section>
   {{ end }}
+{{/*  Testimonials  */}}
   {{ with .Param "testimonials" }}
   <section id="testimonials">
     <h1>Customer endorsement</h1>
@@ -97,7 +122,6 @@
       </ol>
     </div>
   </section>
-    
   {{ end }}
   <footer class="dark">
     {{ with site.Menus.footer }}
@@ -111,7 +135,7 @@
       </ul>
     </nav>
     {{ end }}
-    {{/*  Facebook icon link  */}}
+{{/*  Facebook icon link  */}}
     <ul>
       {{ with site.Author.facebook }}
       <li>
@@ -120,7 +144,7 @@
         </a>
       </li>
       {{ end }}
-      {{/*  Twitter icon link  */}}
+{{/*  Twitter icon link  */}}
       {{ with site.Author.twitter }}
       <li>
         <a href="{{ . }}">
@@ -128,7 +152,7 @@
         </a>
       </li>
       {{ end }}
-      {{/*  Email icon link  */}}
+{{/*  Email icon link  */}}
       {{ with site.Author.email }}
       <li>
         <a href="mailto:{{ . }}">
@@ -137,7 +161,7 @@
       </li>
       {{ end }}
     </ul>
-    {{/*  Copyright  */}}
+{{/*  Copyright  */}}
     <div>{{.Param "copyright" | markdownify }}</div>
   </footer>
 </body>

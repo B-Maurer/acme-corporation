@@ -2,7 +2,7 @@
 menu:
   footer:
     name: Terms of Use
-    weight: 200
+    weight: 300
 ---
 
 # Terms of Use

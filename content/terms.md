@@ -3,6 +3,7 @@ menu:
   footer:
     name: Terms of Use
     weight: 300
+type: modern
 ---
 
 # Terms of Use
@@ -23,8 +24,8 @@ By accessing the website for Acme Corporation, you are agreeing to be bound by t
 
 ## Disclaimer
 
-1.  The materials on Acme Corporation's website are provided on an 'as-is' basis. Acme Corporation makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
-2.  Further, Acme Corporation does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.
+1. The materials on Acme Corporation's website are provided on an 'as-is' basis. Acme Corporation makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+2. Further, Acme Corporation does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.
 
 ## Limitations
 

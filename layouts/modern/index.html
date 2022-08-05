@@ -1,24 +1,6 @@
 {{ define "bodyClass" }}home{{ end }}
 {{ define "body" }}
 {{ $title := default site.Title .Title }}
-  <header>
-    <a href="{{ site.BaseURL | relLangURL }}">
-      <img src="./image/logo.svg" alt="Acme Logo" height="36" width="48" />
-      Acme Corporation
-    </a>
-    {{ with site.Menus.main }}
-    <nav>
-      <button class="hamburger">&#9776;</button>
-      <ul>
-        {{ range . }}
-        <li>
-          <a href="{{ .URL }}">{{ .Name | humanize }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
-    {{ end }}
-  </header>
   {{/* Intro */}}
   <section id="intro">
     {{ with $title }}<h1>{{ . }}</h1>{{ end }}
@@ -31,16 +13,15 @@
     <h1>Our Products</h1>
     {{ with . | transform.Unmarshal (dict "delimiter" ",") }}
     <table>
-      {{ range $i, $value := . }}
+    {{ range $i, $value := . }}
       {{ if eq $i 0 }}<thead>{{ end }}
         <tr>
           {{ range $value }}
           <td>{{ . }}</td>
           {{ end }}
         </tr>
-        {{ if eq $i 0 }}
-      </thead>{{ end }}
-      {{ end }}
+      {{ if eq $i 0 }}</thead>{{ end }}
+    {{ end }}
     </table>
     {{ end }}
     <a download href="{{ .Permalink }}">Download listing</a>
@@ -112,45 +93,4 @@
     </div>
   </section>
   {{ end }}
-  <footer class="dark">
-    {{ with site.Menus.footer }}
-    <nav>
-      <ul>
-        {{ range . }}
-        <li>
-          <a href="{{ .URL }}">{{ .Name | humanize }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
-    {{ end }}
-    {{/* Facebook icon link */}}
-    <ul>
-      {{ with site.Author.facebook }}
-      <li>
-        <a href="{{ . }}">
-          <i class="icon-facebook"></i>
-        </a>
-      </li>
-      {{ end }}
-      {{/* Twitter icon link */}}
-      {{ with site.Author.twitter }}
-      <li>
-        <a href="{{ . }}">
-          <i class="icon-twitter"></i>
-        </a>
-      </li>
-      {{ end }}
-      {{/* Email icon link */}}
-      {{ with site.Author.email }}
-      <li>
-        <a href="mailto:{{ . }}">
-          <i class="icon-email"></i>
-        </a>
-      </li>
-      {{ end }}
-    </ul>
-    {{/* Copyright */}}
-    <div>{{.Param "copyright" | markdownify }}</div>
-  </footer>
 {{ end }}
